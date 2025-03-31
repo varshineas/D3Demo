@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>D3 Force Graph Demo</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>D3.js Visualization Showcase</title>
+  <link rel="stylesheet" href="style.css" />
   <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
-  <h1>Interactive Force-Directed Graph</h1>
-  <svg width="800" height="600"></svg>
-  <script src="graph.js"></script>
+  <h1>D3.js Visualization Showcase</h1>
+
+  <section>
+    <h2>Force-Directed Graph</h2>
+    <svg id="forceGraph" width="800" height="500"></svg>
+  </section>
+
+  <section>
+    <h2>Bar Chart</h2>
+    <svg id="barChart" width="600" height="400"></svg>
+  </section>
+
+  <section>
+    <h2>Pie Chart</h2>
+    <svg id="pieChart" width="400" height="400"></svg>
+  </section>
+
+  <section>
+    <h2>Line Chart</h2>
+    <svg id="lineChart" width="600" height="400"></svg>
+  </section>
+
+  <script src="js/forceGraph.js"></script>
+  <script src="js/barChart.js"></script>
+  <script src="js/pieChart.js"></script>
+  <script src="js/lineChart.js"></script>
 </body>
 </html>
