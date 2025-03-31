@@ -1,91 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>D3 Bar Chart Demo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D3 Force Graph Demo</title>
+  <link rel="stylesheet" href="style.css">
   <script src="https://d3js.org/d3.v7.min.js"></script>
-  <style>
-    body {
-      font-family: sans-serif;
-      background-color: #F3F3E0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2em;
-    }
-    svg {
-      background: #CBDCEB;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-    }
-    .bar {
-      fill: #608BC1;
-    }
-    .bar:hover {
-      fill: #133E87;
-    }
-    .tooltip {
-      position: absolute;
-      background: white;
-      border: 1px solid #333;
-      padding: 5px 8px;
-      font-size: 14px;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.2s ease;
-    }
-  </style>
 </head>
 <body>
-  <h1>Simple D3 Bar Chart</h1>
-  <svg width="600" height="400"></svg>
-  <div class="tooltip" id="tooltip"></div>
-
-  <script>
-    const data = [25, 30, 45, 60, 20, 65, 75];
-    const svg = d3.select("svg");
-    const width = +svg.attr("width");
-    const height = +svg.attr("height");
-    const tooltip = d3.select("#tooltip");
-
-    const xScale = d3.scaleBand()
-      .domain(data.map((d, i) => i))
-      .range([40, width - 20])
-      .padding(0.1);
-
-    const yScale = d3.scaleLinear()
-      .domain([0, d3.max(data)])
-      .range([height - 30, 20]);
-
-    svg.selectAll(".bar")
-      .data(data)
-      .join("rect")
-      .attr("class", "bar")
-      .attr("x", (d, i) => xScale(i))
-      .attr("y", height - 30)
-      .attr("width", xScale.bandwidth())
-      .attr("height", 0)
-      .on("mouseover", function(event, d) {
-        tooltip.style("opacity", 1)
-               .html(`Value: ${d}`)
-               .style("left", `${event.pageX + 10}px`)
-               .style("top", `${event.pageY - 20}px`);
-      })
-      .on("mouseout", () => tooltip.style("opacity", 0))
-      .transition()
-      .duration(800)
-      .attr("y", d => yScale(d))
-      .attr("height", d => height - 30 - yScale(d));
-
-    // Optional Axis (for visual structure)
-    svg.append("g")
-      .attr("transform", `translate(0, ${height - 30})`)
-      .call(d3.axisBottom(xScale).tickFormat(i => `Item ${i+1}`));
-
-    svg.append("g")
-      .attr("transform", `translate(40, 0)`)
-      .call(d3.axisLeft(yScale));
-  </script>
+  <h1>Interactive Force-Directed Graph</h1>
+  <svg width="800" height="600"></svg>
+  <script src="graph.js"></script>
 </body>
 </html>
