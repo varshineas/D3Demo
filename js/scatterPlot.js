@@ -27,4 +27,4 @@ scatterSvg.append("g")
 
 scatterSvg.append("g")
   .attr("transform", `translate(40, 0)`)
-  .call(d3.axisLeft(yScale
+  .call(d3.axisLeft(yScale));
