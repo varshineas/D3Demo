@@ -3,36 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>D3.js Visualization Showcase</title>
+  <title>D3 Scientific Visualizations</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
-  <h1>D3.js Visualization Showcase</h1>
+  <h1>D3 Scientific Visualization Showcase</h1>
 
   <section>
-    <h2>Force-Directed Graph</h2>
-    <svg id="forceGraph" width="800" height="500"></svg>
+    <h2>Scatter Plot (Correlation)</h2>
+    <svg id="scatterPlot" width="600" height="400"></svg>
   </section>
 
   <section>
-    <h2>Bar Chart</h2>
-    <svg id="barChart" width="600" height="400"></svg>
+    <h2>Box Plot (Statistical Summary)</h2>
+    <svg id="boxPlot" width="600" height="400"></svg>
   </section>
 
   <section>
-    <h2>Pie Chart</h2>
-    <svg id="pieChart" width="400" height="400"></svg>
+    <h2>Line Chart with Error Bands</h2>
+    <svg id="errorLineChart" width="600" height="400"></svg>
   </section>
 
   <section>
-    <h2>Line Chart</h2>
-    <svg id="lineChart" width="600" height="400"></svg>
+    <h2>Heatmap (Expression Matrix)</h2>
+    <svg id="heatmap" width="600" height="400"></svg>
   </section>
 
-  <script src="js/forceGraph.js"></script>
-  <script src="js/barChart.js"></script>
-  <script src="js/pieChart.js"></script>
-  <script src="js/lineChart.js"></script>
+  <section>
+    <h2>Violin Plot (Distribution)</h2>
+    <svg id="violinPlot" width="600" height="400"></svg>
+  </section>
+
+  <script src="js/scatterPlot.js"></script>
+  <script src="js/boxPlot.js"></script>
+  <script src="js/errorLineChart.js"></script>
+  <script src="js/heatmap.js"></script>
+  <script src="js/violinPlot.js"></script>
 </body>
 </html>
